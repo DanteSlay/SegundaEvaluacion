@@ -42,6 +42,32 @@ teclado 9 números. Después se debe pedir un número y una posición, insertarl
 posición indicada, desplazando los que estén detrás. */
         int tamaño = 10;
         ArrayList<Integer> list = new ArrayList<>();
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Introduce 9 números:");
+        for (int i = 0; i < tamaño-1; i++) {
+            int num = in.nextInt();
+            list.add(i, num);
+        }
+
+        System.out.print("Introduce un número: ");
+        int num = in.nextInt();
         
+        System.out.print("Introduce una posición (entre 1 y 10): ");
+        int pos = in.nextInt() - 1;
+
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for (int i = 0, j = 0; i < list.size() + 1; i++) {
+            if(i == pos){
+                list2.add(i, num);
+            }else{
+                list2.add(i, list.get(j));
+                j++;
+            }
+        }
+
+        System.out.println(list);
+        System.out.println(list2);
     }
 }

@@ -1,6 +1,7 @@
 package ejerciciosarrays;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Ejercicio16 {
@@ -9,7 +10,7 @@ continuación pedir por teclado una posición (entre 0 y 9). Eliminar el element
 en la posición dada sin dejar huecos. */
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        /*Scanner in = new Scanner(System.in);
         int tamaño = 10;
         int arr[] = new int[tamaño];
         rellenarAleatorios(arr, 1, 10);
@@ -34,4 +35,34 @@ en la posición dada sin dejar huecos. */
             lista[i] = (int) (Math.floor(Math.random()*(b-a+1)+a));
         }
     }
+    */
+    //ArrayList
+    /*Crear un programa que rellene aleatoriamente un array de 10 números enteros y a
+continuación pedir por teclado una posición (entre 0 y 9). Eliminar el elemento situado
+en la posición dada sin dejar huecos. */
+
+    ArrayList <Integer> list = new ArrayList<>();
+    int tamaño = 10;
+
+    for (int i = 0; i < tamaño; i++) {
+        int numAleat = (int)(Math.random() * (10 - 1 + 1) + 1);
+        list.add(i, numAleat);
+    }
+    System.out.println(list);
+
+    Scanner in = new Scanner(System.in);
+
+    System.out.print("Eliminar (entre 0 y 9): ");
+    int eliminar = in.nextInt();
+
+    for (int i = 0; i < tamaño; i++) {
+        if(i == eliminar){
+            list.remove(i);
+        }else{
+        }
+    }
+    System.out.println(list);
+
+
+}
 }

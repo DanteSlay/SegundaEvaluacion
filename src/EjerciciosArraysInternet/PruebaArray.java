@@ -15,6 +15,7 @@ public class PruebaArray
       }
 
       System.out.println(arr);
+      System.out.println(arr.size());
   }
   }
 
